@@ -35,7 +35,7 @@ final class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func inwindToLogin(_ unwindSegue: UIStoryboardSegue) {
+    @IBAction func unwindToLogin(_ unwindSegue: UIStoryboardSegue) {
         usernameTF.text = ""
         passwordTF.text = ""
     }
