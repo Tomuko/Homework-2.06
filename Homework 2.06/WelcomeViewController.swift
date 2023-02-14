@@ -17,9 +17,9 @@ final class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        logOutButton.layer.cornerRadius = 10
-        
         welcomeLabel.text = "Welcome, \(username)!"
+        
+        logOutButton.layer.cornerRadius = 10
     }
    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
