@@ -70,6 +70,9 @@ final class LoginViewController: UIViewController {
         present(alertControllerLogIn, animated: true, completion: nil)
     }
     
-    
+    @IBAction func unwindToLogin() {
+        usernameTF.text = ""
+        passwordTF.text = ""
     }
+}
 

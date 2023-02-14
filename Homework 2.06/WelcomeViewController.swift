@@ -31,10 +31,4 @@ final class WelcomeViewController: UIViewController {
         dismiss(animated: true)
         performSegue(withIdentifier: "UnwindToLoginScreen", sender: self)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if let loginVC = segue.destination as? LoginViewController {
-               
-        }
-    }
 }
