@@ -21,14 +21,4 @@ final class WelcomeViewController: UIViewController {
         
         logOutButton.layer.cornerRadius = 10
     }
-   
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
-    }
-    
-    
-    @IBAction func logOutButtonTapped() {
-        dismiss(animated: true)
-        performSegue(withIdentifier: "UnwindToLoginScreen", sender: self)
-    }
 }

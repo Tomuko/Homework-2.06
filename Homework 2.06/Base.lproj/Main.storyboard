@@ -112,7 +112,7 @@
                                     <constraint firstAttribute="height" constant="150" id="oxE-oe-DmH"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="unwindToLogin" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97p-hb-nbz">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="myUnwindAction" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97p-hb-nbz">
                                 <rect key="frame" x="45" y="399" width="303" height="30"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -120,7 +120,7 @@
                                     <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="logOutButtonTapped" destination="wxr-oH-401" eventType="touchUpInside" id="h1h-Yp-LMw"/>
+                                    <segue destination="KEp-dB-ncj" kind="unwind" unwindAction="logOutButtonTapped:" id="fmW-6F-aqV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -143,10 +143,10 @@
                     <connections>
                         <outlet property="logOutButton" destination="97p-hb-nbz" id="BzR-7Z-3f3"/>
                         <outlet property="welcomeLabel" destination="Fjz-Vt-l0F" id="EAB-Qu-62z"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="UnwindToLoginScreen" modalPresentationStyle="fullScreen" id="O2v-qr-S5b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aNF-UO-vTs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="KEp-dB-ncj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3418" y="730"/>
         </scene>

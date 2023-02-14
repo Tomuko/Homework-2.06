@@ -70,9 +70,10 @@ final class LoginViewController: UIViewController {
         present(alertControllerLogIn, animated: true, completion: nil)
     }
     
-    @IBAction func unwindToLogin() {
-        usernameTF.text = ""
-        passwordTF.text = ""
-    }
+    @IBAction func logOutButtonTapped(_ unwingSegue: UIStoryboardSegue) {
+            guard unwingSegue.source is WelcomeViewController else { return }
+            usernameTF.text = ""
+            passwordTF.text = ""
+        }
 }
 
