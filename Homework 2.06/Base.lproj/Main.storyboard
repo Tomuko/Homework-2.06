@@ -36,7 +36,7 @@
                                 </state>
                                 <connections>
                                     <action selector="logInButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="TYD-4i-mXg"/>
-                                    <segue destination="wxr-oH-401" kind="presentation" identifier="ShowWelcomeScreen" modalPresentationStyle="overFullScreen" id="UGt-zd-RmV"/>
+                                    <segue destination="wxr-oH-401" kind="presentation" identifier="ShowWelcomeScreen" modalPresentationStyle="fullScreen" id="UGt-zd-RmV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYF-bI-Qus">
