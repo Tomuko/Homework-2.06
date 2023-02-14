@@ -83,7 +83,7 @@
                     <connections>
                         <outlet property="forgotPasswordButton" destination="XdP-jP-nCj" id="cX0-as-avX"/>
                         <outlet property="forgotUserNameButton" destination="xYF-bI-Qus" id="Nn8-gE-DGB"/>
-                        <outlet property="logInButton" destination="g1h-eB-e5n" id="aZ9-Bk-Wa3"/>
+                        <outlet property="logInButton" destination="g1h-eB-e5n" id="obK-QU-mPw"/>
                         <outlet property="passwordTF" destination="I11-Ux-AFT" id="ua8-2e-KIp"/>
                         <outlet property="usernameTF" destination="Glj-F1-vyt" id="xgP-KC-lIJ"/>
                     </connections>
@@ -112,17 +112,6 @@
                                     <constraint firstAttribute="height" constant="150" id="oxE-oe-DmH"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TaH-6p-yXH">
-                                <rect key="frame" x="45" y="399" width="303" height="30"/>
-                                <color key="backgroundColor" name="AccentColor"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Log out">
-                                    <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="logOutButtonTapped" destination="wxr-oH-401" eventType="touchUpInside" id="c9l-u2-8x7"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="unwindToLogin" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97p-hb-nbz">
                                 <rect key="frame" x="45" y="399" width="303" height="30"/>
                                 <color key="backgroundColor" name="AccentColor"/>
@@ -131,7 +120,7 @@
                                     <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="logOutButtonTapped" destination="wxr-oH-401" eventType="touchUpInside" id="SNb-al-cFY"/>
+                                    <action selector="logOutButtonTapped" destination="wxr-oH-401" eventType="touchUpInside" id="h1h-Yp-LMw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -141,22 +130,20 @@
                             <constraint firstItem="Fjz-Vt-l0F" firstAttribute="top" secondItem="mIJ-w5-BIW" secondAttribute="top" constant="45" id="3Xr-CR-NrH"/>
                             <constraint firstItem="mIJ-w5-BIW" firstAttribute="trailing" secondItem="jwo-qV-KgE" secondAttribute="trailing" constant="50" id="DSO-4m-WTK"/>
                             <constraint firstItem="mIJ-w5-BIW" firstAttribute="trailing" secondItem="Fjz-Vt-l0F" secondAttribute="trailing" constant="45" id="FJg-04-z4U"/>
-                            <constraint firstItem="TaH-6p-yXH" firstAttribute="baseline" secondItem="97p-hb-nbz" secondAttribute="baseline" id="JE9-ME-971"/>
                             <constraint firstItem="97p-hb-nbz" firstAttribute="top" secondItem="jwo-qV-KgE" secondAttribute="bottom" constant="60" id="Oy4-zs-jKC"/>
                             <constraint firstItem="jwo-qV-KgE" firstAttribute="leading" secondItem="mIJ-w5-BIW" secondAttribute="leading" constant="50" id="S73-K9-RvR"/>
                             <constraint firstItem="mIJ-w5-BIW" firstAttribute="trailing" secondItem="97p-hb-nbz" secondAttribute="trailing" constant="45" id="SHH-s9-dWw"/>
                             <constraint firstItem="Fjz-Vt-l0F" firstAttribute="leading" secondItem="mIJ-w5-BIW" secondAttribute="leading" constant="45" id="TBg-vl-05e"/>
                             <constraint firstItem="97p-hb-nbz" firstAttribute="leading" secondItem="mIJ-w5-BIW" secondAttribute="leading" constant="45" id="XJg-Ng-oFP"/>
-                            <constraint firstItem="mIJ-w5-BIW" firstAttribute="trailing" secondItem="TaH-6p-yXH" secondAttribute="trailing" constant="45" id="nzJ-aZ-6a2"/>
                             <constraint firstItem="jwo-qV-KgE" firstAttribute="top" secondItem="Fjz-Vt-l0F" secondAttribute="bottom" constant="45" id="rtB-di-T7n"/>
-                            <constraint firstItem="TaH-6p-yXH" firstAttribute="leading" secondItem="mIJ-w5-BIW" secondAttribute="leading" constant="45" id="wUK-In-SjD"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Am7-Vl-XQ7"/>
                     <navigationItem key="navigationItem" id="C6J-tH-e3C"/>
                     <connections>
-                        <outlet property="logOutButton" destination="TaH-6p-yXH" id="YiX-Ul-qhc"/>
+                        <outlet property="logOutButton" destination="97p-hb-nbz" id="BzR-7Z-3f3"/>
                         <outlet property="welcomeLabel" destination="Fjz-Vt-l0F" id="EAB-Qu-62z"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="UnwindToLoginScreen" modalPresentationStyle="fullScreen" id="O2v-qr-S5b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aNF-UO-vTs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

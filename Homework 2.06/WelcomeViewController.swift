@@ -13,7 +13,7 @@ final class WelcomeViewController: UIViewController {
     @IBOutlet var logOutButton: UIButton!
     
     var username = ""
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +28,13 @@ final class WelcomeViewController: UIViewController {
     
     
     @IBAction func logOutButtonTapped() {
-        performSegue(withIdentifier: "unwindToLogin", sender: self)
-        
+        dismiss(animated: true)
+        performSegue(withIdentifier: "UnwindToLoginScreen", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if let loginVC = segue.destination as? LoginViewController {
+               
+        }
     }
 }

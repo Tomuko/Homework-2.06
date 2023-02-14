@@ -39,8 +39,8 @@ final class LoginViewController: UIViewController {
         let username = usernameTF.text ?? ""
         let password = passwordTF.text ?? ""
         
-        if password != "Password" || username != "User" {
-            let alertControllerForWrongLoginOrPassword = UIAlertController(title: "Invalid login or password", message: "Pleae, enter correct login and password☠️", preferredStyle: .alert)
+        if password != "1" || username != "1" {
+            let alertControllerForWrongLoginOrPassword = UIAlertController(title: "Invalid login or password", message: "Please, enter correct login and password☠️", preferredStyle: .alert)
            
             let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alertControllerForWrongLoginOrPassword.addAction(okAction)
@@ -53,7 +53,7 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func forgotUserNameButtonTapped(_ sender: UIButton) {
-        let alertControllerLogIn = UIAlertController(title: "Ooops!", message: "Your name is User👾", preferredStyle: .alert)
+        let alertControllerLogIn = UIAlertController(title: "Ooops!", message: "Your name is 1👾", preferredStyle: .alert)
        
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alertControllerLogIn.addAction(okAction)
@@ -62,7 +62,7 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func forgotPasswordButtonTapped() {
-        let alertControllerLogIn = UIAlertController(title: "Ooops!", message: "Your password is Password🤖", preferredStyle: .alert)
+        let alertControllerLogIn = UIAlertController(title: "Ooops!", message: "Your password is 1🤖", preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alertControllerLogIn.addAction(okAction)
