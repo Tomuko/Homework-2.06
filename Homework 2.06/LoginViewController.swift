@@ -8,12 +8,12 @@
 import UIKit
 
 final class LoginViewController: UIViewController {
-
+    
     @IBOutlet var usernameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     @IBOutlet var logInButton: UIButton!
-    @IBOutlet var forgotUserNameButton: UIButton!
-    @IBOutlet var forgotPasswordButton: UIButton!
+    private let username = "1"
+    private let password = "2"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,57 +23,49 @@ final class LoginViewController: UIViewController {
         usernameTF.autocorrectionType = .no
         usernameTF.spellCheckingType = .no
         passwordTF.isSecureTextEntry = true
-        }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let welcomeVC = segue.destination as? WelcomeViewController {
-            welcomeVC.username = usernameTF.text ?? ""
-        }
+        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+        welcomeVC.username = user
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+
     @IBAction func logInButtonTapped() {
-        let username = usernameTF.text ?? ""
-        let password = passwordTF.text ?? ""
-        
-        if password != "1" || username != "1" {
-            let alertControllerForWrongLoginOrPassword = UIAlertController(title: "Invalid login or password", message: "Please, enter correct login and password☠️", preferredStyle: .alert)
-           
-            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-            alertControllerForWrongLoginOrPassword.addAction(okAction)
-            
-            present(alertControllerForWrongLoginOrPassword, animated: true, completion: nil)
-            
-            passwordTF.text = ""
+        guard usernameTF.text == "1", passwordTF.text == "1" else {
+            showAlert(
+                title: "Invalid login or password",
+                message: "Please, enter correct login and password☠️",
+                textField: passwordTF
+            )
+            return
         }
-        performSegue(withIdentifier: "ShowWelcomeScreen", sender: self)
     }
     
     @IBAction func forgotUserNameButtonTapped(_ sender: UIButton) {
-        let alertControllerLogIn = UIAlertController(title: "Ooops!", message: "Your name is 1👾", preferredStyle: .alert)
+        sender.tag == 0
+        ? showAlert(title: "Ooops!", message: "Your name is \(username) 👾")
+        : showAlert(title: "Ooops!", message: "Your password is \(password)🤖")
        
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alertControllerLogIn.addAction(okAction)
         
-        present(alertControllerLogIn, animated: true, completion: nil)
     }
     
-    @IBAction func forgotPasswordButtonTapped() {
-        let alertControllerLogIn = UIAlertController(title: "Ooops!", message: "Your password is 1🤖", preferredStyle: .alert)
-        
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alertControllerLogIn.addAction(okAction)
-        
-        present(alertControllerLogIn, animated: true, completion: nil)
+    @IBAction func logOutButtonTapped(segue: UIStoryboardSegue) {
+        usernameTF.text = ""
+        passwordTF.text = ""
     }
-    
-    @IBAction func logOutButtonTapped(_ unwingSegue: UIStoryboardSegue) {
-            guard unwingSegue.source is WelcomeViewController else { return }
-            usernameTF.text = ""
-            passwordTF.text = ""
-        }
 }
+
+private func showAlert(title: String, message: String, textField: UITextField? = nil) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let okAction = UIAlertAction(title: "Okay", message: .default) {_ in
+    }
+    alert.addAction(okAction)
+    present(alert, animated: true)
+}
+
 
